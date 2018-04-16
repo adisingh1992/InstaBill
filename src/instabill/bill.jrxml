@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e90fa6a6-54b2-4e8a-b3fc-0c9b6b9eac3a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT billProducts.pname, billProducts.pquantity, billProducts.pprice, (pquantity * pprice) AS pamount FROM billProducts WHERE bid = 1]]>
+	</queryString>
+	<field name="pname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pquantity" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pprice" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pamount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="5" width="177" height="35" uuid="da3b3f47-630a-4b59-85e8-a96cb8c60303"/>
+				<textElement>
+					<font fontName="Copperplate Gothic Light" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[InstaBill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="27" y="39" width="500" height="40" uuid="af285e12-f86f-4764-9f9b-ca02667bc056"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Schoolbook L" size="12" isBold="true" isItalic="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[A GST (Goods and Services Tax) ready financial solution for maintainingday to day transactions and generating bill invoices thereby increasing the productivity of your outfit.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="27" y="30" width="100" height="20" uuid="ea4c1cbd-ab59-4cac-bc6e-82d68b732540"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Copperplate Gothic Light" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="30" width="100" height="20" uuid="a733e14e-233d-43d6-a8a4-0f4807bf55a3"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Copperplate Gothic Light" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="30" width="100" height="20" uuid="1eff2451-4cdb-45b3-97a6-9f6ad0574910"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Copperplate Gothic Light" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="30" width="100" height="20" uuid="e05ec01e-9a70-4d78-98b0-9ae02fa74d22"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Copperplate Gothic Light" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="27" y="8" width="100" height="12" uuid="298316f8-5619-4c31-940b-8a6c1985b24c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="163" y="8" width="100" height="12" uuid="b9a06a53-92b9-44a7-a04d-01e6843c6656"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pquantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="297" y="8" width="100" height="12" uuid="56b28d06-cbd8-40d7-bdd8-208619a515b4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="427" y="8" width="100" height="12" uuid="054e8b3b-3f17-4d26-beec-3e2e8b407a02"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pamount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
